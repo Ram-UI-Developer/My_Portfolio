@@ -100,7 +100,7 @@
     <!-- Header -->
     <header class="fixed top-0 left-0 w-full bg-gray-900 text-white shadow-md z-50">
         <nav class="flex justify-between items-center px-8 py-4">
-            <h1 class="text-2xl font-bold">Ruttala Ramachandra Rao</h1>
+            <h1 id="logo" class="text-2xl font-bold cursor-pointer">Ruttala Ramachandra Rao</h1>
             <div class="md:hidden cursor-pointer" id="menu-btn">
                 <!-- Hamburger icon -->
                 <div class="space-y-1">
@@ -121,7 +121,7 @@
 
         <!-- Mobile Menu -->
         <ul id="mobile-menu"
-            class="hidden flex-col items-center bg-gray-800 md:hidden text-lg font-medium space-y-4 py-4">
+            class="hidden flex-col text-center items-center bg-gray-800 md:hidden text-lg font-medium space-y-4 py-4">
             <li><a href="#about" class="hover:text-yellow-400">About</a></li>
             <li><a href="#skills" class="hover:text-yellow-400">Skills</a></li>
             <li><a href="#projects" class="hover:text-yellow-400">Projects</a></li>
@@ -146,8 +146,8 @@
 
         <!-- Right: Image -->
         <div class="md:w-1/2 flex justify-center mt-10 md:mt-0">
-            <img src="Mypic.png" alt="Ramachandra"
-                class="w-64 h-64 rounded-full shadow-lg transform -translate-x-40 opacity-0 animate-slide-in" />
+            <img src="Mypic.jpeg" alt="Ramachandra"
+                class="w-80 h-80 rounded-full shadow-lg transform -translate-x-40 opacity-0 animate-slide-in" />
         </div>
     </section>
 
@@ -439,6 +439,13 @@
                 link.classList.add("text-yellow-400", "font-semibold");
                 mobileMenu.classList.add("hidden"); // Hide mobile menu on click
             });
+        });
+    </script>
+    <script>
+        document.getElementById("logo").addEventListener("click", () => {
+             // prevent any link behavior
+            window.scrollTo({ top: 0, behavior: "smooth" }); // smooth scroll to top
+            history.replaceState(null, null, window.location.pathname);
         });
     </script>
 
